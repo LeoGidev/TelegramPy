@@ -25,7 +25,7 @@ class TelegramBot:
 # Uso de la clase
 bot_token = 'tu_bot_token_aqui'
 chat_id = 'tu_chat_id_aqui'
-mensaje = 'Resultado de la prueba'
+mensaje = 'mensaje'
 archivo = 'ruta/al/archivo.xlsx'
 
 bot = TelegramBot(bot_token, chat_id)
