@@ -1,8 +1,10 @@
 import requests
 
-CHATID = 'tu_chat_id_aqui'
-BOTTOKEN = 'tu_bot_token_aqui'
-mensaje = 'Resultado de la prueba'
+class TelegramBot:
+    def __init__(self, bot_token, chat_id):
+        self.bot_token = bot_token
+        self.chat_id = chat_id
+        self.base_url = f'https://api.telegram.org/bot{self.bot_token}'
 
 # URL base de la API de Telegram
 url = f'https://api.telegram.org/bot{BOTTOKEN}/sendMessage'
