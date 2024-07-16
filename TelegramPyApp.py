@@ -44,7 +44,7 @@ class TelegramBot:
                 self.send_message(chat_id, f'Comando no reconocido, por favor utilice uno de los comandos disponibles: {message_text}')
 
 # Uso de la clase
-bot_token = 'bot_token_aqui'
+bot_token = 'bot_token'
 bot = TelegramBot(bot_token)
 
 # Bucle para recibir y manejar actualizaciones
