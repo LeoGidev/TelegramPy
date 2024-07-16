@@ -5,10 +5,10 @@ class TelegramBot:
         self.bot_token = bot_token
         self.base_url = f'https://api.telegram.org/bot{self.bot_token}'
         
-    def send_message(self, message):
+    def send_message(self, chat_id, message):
         url = f'{self.base_url}/sendMessage'
         data = {
-            'chat_id': self.chat_id,
+            'chat_id': chat_id,
             'text': message
         }
         response = requests.post(url, data=data)
