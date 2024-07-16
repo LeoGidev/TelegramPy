@@ -4,7 +4,7 @@ class TelegramBot:
     def __init__(self, bot_token):
         self.bot_token = bot_token
         self.base_url = f'https://api.telegram.org/bot{self.bot_token}'
-        
+
     def send_message(self, chat_id, message):
         url = f'{self.base_url}/sendMessage'
         data = {
@@ -14,11 +14,17 @@ class TelegramBot:
         response = requests.post(url, data=data)
         return response.json()
 
-    def send_document(self, file_path):
+    def send_document(self, chat_id, file_path):
         url = f'{self.base_url}/sendDocument'
         files = {'document': open(file_path, 'rb')}
-        data = {'chat_id': self.chat_id}
+        data = {'chat_id': chat_id}
         response = requests.post(url, files=files, data=data)
+        return response.json()
+
+    def get_updates(self, offset=None):
+        url = f'{self.base_url}/getUpdates'
+        params = {'offset': offset}
+        response = requests.get(url, params=params)
         return response.json()
 
 # Uso de la clase
