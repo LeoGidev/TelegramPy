@@ -26,6 +26,7 @@ class TelegramBot:
         params = {'offset': offset}
         response = requests.get(url, params=params)
         return response.json()
+
     def handle_updates(self, updates):
         for update in updates['result']:
             chat_id = update['message']['chat']['id']
@@ -41,7 +42,10 @@ class TelegramBot:
                 self.send_document(chat_id, file_path)
             else:
                 self.send_message(chat_id, f'Comando no reconocido: {message_text}')
-            
+
+# Uso de la clase
+bot_token = 'tu_bot_token_aqui'
+bot = TelegramBot(bot_token)
 
 # Bucle para recibir y manejar actualizaciones
 offset = None
