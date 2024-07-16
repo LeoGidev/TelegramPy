@@ -30,6 +30,12 @@ class TelegramBot:
         for update in updates['result']:
             chat_id = update['message']['chat']['id']
             message_text = update['message']['text']
+            if message_text == '/start':
+                self.send_message(chat_id, 'Bot iniciado.')
+             elif message_text == '/help':
+                self.send_message(chat_id, 'Comandos disponibles: /start, /help, /sendfile')
+            
+            
 
 # Uso de la clase
 bot_token = 'tu_bot_token_aqui'
