@@ -45,7 +45,9 @@ class TelegramBot:
 
 # Bucle para recibir y manejar actualizaciones
 offset = None
-
 while True:
     updates = bot.get_updates(offset)
     if updates['result']:
+        bot.handle_updates(updates)
+        # Actualizar el offset para obtener solo nuevos mensajes
+        offset = updates['result'][-1]['update_id'] + 1
