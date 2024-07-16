@@ -26,6 +26,10 @@ class TelegramBot:
         params = {'offset': offset}
         response = requests.get(url, params=params)
         return response.json()
+    def handle_updates(self, updates):
+        for update in updates['result']:
+            chat_id = update['message']['chat']['id']
+            message_text = update['message']['text']
 
 # Uso de la clase
 bot_token = 'tu_bot_token_aqui'
