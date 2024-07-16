@@ -35,7 +35,7 @@ class TelegramBot:
             if message_text == '/start':
                 self.send_message(chat_id, 'Bot iniciado.')
             elif message_text == '/Ayuda':
-                self.send_message(chat_id, 'Comandos disponibles: /start, /Ayuda, /archivo')
+                self.send_message(chat_id, 'Hola! Comandos disponibles: /start, /Ayuda, /archivo')
             elif message_text == '/archivo':
                 # Ruta del archivo a enviar 
                 file_path = 'ruta/al/archivo.xlsx'
