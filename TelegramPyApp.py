@@ -34,7 +34,12 @@ class TelegramBot:
                 self.send_message(chat_id, 'Bot iniciado.')
              elif message_text == '/help':
                 self.send_message(chat_id, 'Comandos disponibles: /start, /help, /sendfile')
-            
+            elif message_text == '/sendfile':
+                # Ruta del archivo que quieres enviar
+                file_path = 'ruta/al/archivo.xlsx'
+                self.send_document(chat_id, file_path)
+            else:
+                self.send_message(chat_id, f'Comando no reconocido: {message_text}')
             
 
 # Uso de la clase
