@@ -43,18 +43,6 @@ class TelegramBot:
                 self.send_message(chat_id, f'Comando no reconocido: {message_text}')
             
 
-# Uso de la clase
-bot_token = 'tu_bot_token_aqui'
-chat_id = 'tu_chat_id_aqui'
-mensaje = 'mensaje'
-archivo = 'ruta/al/archivo.xlsx'
-
-bot = TelegramBot(bot_token, chat_id)
-
-# Enviar mensaje
-respuesta_mensaje = bot.send_message(mensaje)
-print(respuesta_mensaje)
-
-# Enviar archivo
-respuesta_archivo = bot.send_document(archivo)
-print(respuesta_archivo)
+# Bucle para recibir y manejar actualizaciones
+offset = None
+while True:
