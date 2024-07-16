@@ -30,9 +30,10 @@ class TelegramBot:
         for update in updates['result']:
             chat_id = update['message']['chat']['id']
             message_text = update['message']['text']
+
             if message_text == '/start':
                 self.send_message(chat_id, 'Bot iniciado.')
-             elif message_text == '/help':
+            elif message_text == '/help':
                 self.send_message(chat_id, 'Comandos disponibles: /start, /help, /sendfile')
             elif message_text == '/sendfile':
                 # Ruta del archivo que quieres enviar
