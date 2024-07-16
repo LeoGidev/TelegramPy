@@ -41,7 +41,7 @@ class TelegramBot:
                 file_path = 'ruta/al/archivo.xlsx'
                 self.send_document(chat_id, file_path)
             else:
-                self.send_message(chat_id, f'Comando no reconocido: {message_text}')
+                self.send_message(chat_id, f'Comando no reconocido, por favor utilice uno de los comandos disponibles: {message_text}')
 
 # Uso de la clase
 bot_token = 'bot_token_aqui'
